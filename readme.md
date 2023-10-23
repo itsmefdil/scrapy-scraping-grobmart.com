@@ -1,8 +1,8 @@
-## Scrapy Scraping Bukukita.com
+## Scrapy Scraping Grobmart.com
 
 ### Description
 
-This is a simple scraping project using Scrapy to scrape data from Bukukita.com. The data scraped are book title, author, publisher, price, and book category. The data will be saved in a csv file.
+This is a simple scraping project using Scrapy to scrape data from Grobmart.com. The data scraped are book title, author, publisher, price, and book category. The data will be saved in a csv file.
 
 ### How to Run
 
