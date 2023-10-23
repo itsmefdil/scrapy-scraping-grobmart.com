@@ -17,7 +17,7 @@ pip install scrapy
 3. Run the spider
 
 ```
-scrapy runspider app.py -o data_bukukita.csv
+scrapy runspider app.py -o data_grobmart.com.csv
 ```
 
-4. The data will be saved in a csv file named `bukukita.csv`
+4. The data will be saved in a csv file named `data_grobmart.com.csv`
