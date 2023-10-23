@@ -20,14 +20,20 @@ class QuotesSpider(scrapy.Spider):
             yield Request(link, callback=self.parse_detail)
 
     def parse_detail(self, response):
+        detail = response.css("ul.list-unstyled")
+
         book = {
             "Source": response.url,
-            "Judul": response.css("div.page-title::text").get().strip(),
+            "Judul": response.css("div.title::text").get().strip(),
             "Harga": response.css("div.product-price-new::text")
             .get()
             .replace("Rp", "Rp. ")
             .strip(),
-            "Deskripsi": response.css("div.block-description::text").getall(),
+            "Deskripsi": response.css("div.block-description::text").get(),
+            "Penulis": detail.css("li.product-manufacturer a::text").get(),
+            "Penerbit": detail.css("li.product-publisher a::text").get(),
+            "ISBN": detail.css("li.product-model span::text").get(),
+            "MPN": detail.css("li.product-mpn span::text").get(),
         }
 
         yield book
